@@ -1,38 +1,16 @@
-# create-svelte
-
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+# Roadmap
+- Built the UI
+  - Get Icons and logos for the app
+  - Create most of components you are going to use
+    - Login: modify current view to something like in the nuxt app, remove the image and create some sort of musical animation
+    - Sign In: pretty much the same as the login except that is for sign in 
+    - Header: Create menu for when user is not logged in, and make current user menu only visible when user is logged in
+    - Navs: Create correct navs and figure out how to create variables for routes and name pages
+    - Song details page: this page should look super attractive and it should have a way to download the song stuff as an image, it should also have a way to share their songs through facebook, instagram, and twitter
+    - Admin page: this will contain a reference to all the songs a user has created and some sort of form to create another song
+    - Admin preference page: here user can change its password, delete its account, view its credit details
+    - Payment page: here we need to connect with stripe to create a way for them to pay
+    - Landing page: an overview of the app
+    - Contact page: use some simple form to get feedback from user, should be available for logged in users too
+    - About: a page to explain more in detail about the page and also to show off some stuff
+    - Preview page: probably a page to show some popular songs, pretty much the same as the admin page but for the general public, it will link to a song details page of the free popular songs
