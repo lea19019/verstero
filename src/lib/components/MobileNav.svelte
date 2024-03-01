@@ -2,10 +2,10 @@
     import * as Sheet from "$lib/components/ui/sheet";
     import { Button } from "$lib/components/ui/button";
 	import MobileLink from "./MobileLink.svelte";
-    import {MenuIcon} from 'lucide-svelte'
+    import { Icons } from "./icons";
 
 	let open = false;
-    let mainNav = [{"title":"Overview","href":"/examples/dashboard"},{"title":"Customers","href":"/examples/dashboard"},{"title":"Products","href":"/examples/dashboard"},{"title":"Settings","href":"/examples/dashboard"}]
+    let mainNav = [{"title":"Overview","href":"/examples/dashboard"},{"title":"Login","href":"/login"},{"title":"Products","href":"/examples/dashboard"},{"title":"Settings","href":"/examples/dashboard"}]
 </script>
 
 <Sheet.Root bind:open>
@@ -15,7 +15,7 @@
 			variant="ghost"
 			class="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
 		>
-			<MenuIcon class="h-5 w-5" />
+			<Icons.menu class="h-5 w-5" />
 			<span class="sr-only">Toggle Menu</span>
 		</Button>
 	</Sheet.Trigger>

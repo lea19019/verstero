@@ -21,10 +21,10 @@
 	</a>
 
 	<a
-		href="/examples/dashboard"
+		href="/login"
 		class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
 	>
-		Customers
+		Login
 	</a>
 	<a
 		href="/examples/dashboard"
