@@ -10,6 +10,7 @@
 
 	let isLoading = false;
 	async function onSubmit() {
+		console.log("Are you reaching here?")
 		isLoading = true;
 
 		setTimeout(() => {
@@ -33,7 +34,18 @@
 					disabled={isLoading}
 				/>
 			</div>
-			<Button disabled={isLoading}>
+			<div class="grid gap-1">
+				<Label class="sr-only" for="password">password</Label>
+				<Input
+					id="password"
+					placeholder="********"
+					type="password"
+					autocomplete="password"
+					autocorrect="off"
+					disabled={isLoading}
+				/>
+			</div>
+			<Button type="submit" disabled={isLoading}>
 				{#if isLoading}
 					<Icons.spinner class="mr-2 h-4 w-4 animate-spin" />
 				{/if}
@@ -57,5 +69,14 @@
 		{/if}
 		{" "}
 		GitHub
+	</Button>
+	<Button variant="outline" type="button" disabled={isLoading}>
+		{#if isLoading}
+			<Icons.spinner class="mr-2 h-4 w-4 animate-spin" />
+		{:else}
+			<Icons.google class="mr-2 h-4 w-4" />
+		{/if}
+		{" "}
+		Google
 	</Button>
 </div>
