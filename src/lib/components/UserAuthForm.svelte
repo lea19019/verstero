@@ -5,12 +5,18 @@
 	import { Label } from "$lib/components/ui/label";
 	import { cn } from "$lib/utils";
 
+	import { signInWithGoogle, signInWithEmail } from "$lib/firebase";
+
 	let className: string | undefined | null = undefined;
 	export { className as class };
-
+	let email: string
+	let password: string
 	let isLoading = false;
 	async function onSubmit() {
+
 		console.log("Are you reaching here?")
+		console.log(email, password)
+		await signInWithEmail(email, password);
 		isLoading = true;
 
 		setTimeout(() => {
@@ -25,6 +31,7 @@
 			<div class="grid gap-1">
 				<Label class="sr-only" for="email">Email</Label>
 				<Input
+					bind:value={email}
 					id="email"
 					placeholder="name@example.com"
 					type="email"
@@ -37,6 +44,7 @@
 			<div class="grid gap-1">
 				<Label class="sr-only" for="password">password</Label>
 				<Input
+					bind:value={password}
 					id="password"
 					placeholder="********"
 					type="password"
@@ -70,7 +78,7 @@
 		{" "}
 		GitHub
 	</Button>
-	<Button variant="outline" type="button" disabled={isLoading}>
+	<Button variant="outline" type="button" disabled={isLoading} on:click={signInWithGoogle}>
 		{#if isLoading}
 			<Icons.spinner class="mr-2 h-4 w-4 animate-spin" />
 		{:else}

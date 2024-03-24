@@ -38,6 +38,7 @@
 	"dependencies": {
 		"bits-ui": "^0.18.4",
 		"clsx": "^2.1.0",
+		"firebase": "^10.9.0",
 		"lucide-svelte": "^0.343.0",
 		"mode-watcher": "^0.2.1",
 		"svelte-radix": "^1.0.1",
