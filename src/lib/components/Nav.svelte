@@ -16,26 +16,22 @@
 	COntainer of container xd: https://github.com/huntabyte/shadcn-svelte/blob/main/apps/www/src/routes/%2Blayout.svelte
  -->
 <nav class={cn("hidden md:flex items-center space-x-4 lg:space-x-6", className)}>
-	<a href="/examples/dashboard" class="text-sm font-medium transition-colors hover:text-primary">
-		Overview
-	</a>
-
 	<a
-		href="/login"
+		href="/songs"
 		class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
 	>
-		Login
+		Songs
 	</a>
 	<a
-		href="/examples/dashboard"
+		href="/about"
 		class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
 	>
-		Products
+		About
 	</a>
 	<a
-		href="/examples/dashboard"
+		href="/contact"
 		class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
 	>
-		Settings
+		Contact
 	</a>
 </nav>

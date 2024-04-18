@@ -23,6 +23,7 @@
   const getAllSongs = async () => {
     const querySnapshot = await getDocs(collection(db, "songs"));
     songs = querySnapshot.docs.map(doc => {return { id: doc.id, ...doc.data() } })
+    songs = songs.slice(Math.max(songs.length - 2, 0))
   }
 
   onMount(async () => {

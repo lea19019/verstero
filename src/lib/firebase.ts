@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { connectFirestoreEmulator, doc, getFirestore, onSnapshot } from 'firebase/firestore';
-import { connectAuthEmulator, createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, type User } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, type User } from 'firebase/auth';
 import { connectStorageEmulator, getStorage } from 'firebase/storage';
 import { writable, type Readable, derived } from 'svelte/store';
 import { connectFunctionsEmulator, getFunctions, httpsCallable } from "firebase/functions";
@@ -19,7 +19,6 @@ export const app = initializeApp(firebaseConfig);
 export const db = getFirestore();
 connectFirestoreEmulator(db, '127.0.0.1', 8080);
 export const auth = getAuth();
-// connectAuthEmulator(auth, "http://127.0.0.1:9099");
 export const storage = getStorage();
 // connectStorageEmulator(storage, "localhost", 9199);
 
