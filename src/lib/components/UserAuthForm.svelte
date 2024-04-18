@@ -6,6 +6,7 @@
 	import { cn } from "$lib/utils";
 
 	import { signInWithGoogle, signInWithEmail } from "$lib/firebase";
+	import { goto } from "$app/navigation";
 
 	let className: string | undefined | null = undefined;
 	export { className as class };
@@ -13,15 +14,13 @@
 	let password: string
 	let isLoading = false;
 	async function onSubmit() {
-
-		console.log("Are you reaching here?")
-		console.log(email, password)
 		await signInWithEmail(email, password);
 		isLoading = true;
 
 		setTimeout(() => {
 			isLoading = false;
 		}, 3000);
+		goto("/");
 	}
 </script>
 

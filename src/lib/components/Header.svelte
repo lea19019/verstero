@@ -1,9 +1,11 @@
 <script lang="ts">
 	import Search from "./Search.svelte";
-    import Nav from "./Nav.svelte";
-    import MobileNav from "./MobileNav.svelte";
-    import ToggleModeUi from "./ToggleModeUI.svelte";
-    import UserNav from "./UserNav.svelte";
+  import Nav from "./Nav.svelte";
+  import MobileNav from "./MobileNav.svelte";
+  import ToggleModeUi from "./ToggleModeUI.svelte";
+  import UserNav from "./UserNav.svelte";
+  import { user } from "$lib/firebase";
+  import { Button } from "$lib/components/ui/button";
 </script>
 
 <div class="border-b">
@@ -14,7 +16,13 @@
         <div class="ml-auto flex items-center space-x-4">
             <Search />
             <ToggleModeUi />
-            <UserNav />
+            {#if $user}
+              <UserNav />
+            {:else}
+              <Button variant="outline">
+                <a href="/login" class="btn btn-primary">Sign in</a>
+              </Button>
+            {/if}
         </div>
     </div>
 </div>

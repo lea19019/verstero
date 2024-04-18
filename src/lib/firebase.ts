@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStat
 import { connectStorageEmulator, getStorage } from 'firebase/storage';
 import { writable, type Readable, derived } from 'svelte/store';
 import { connectFunctionsEmulator, getFunctions, httpsCallable } from "firebase/functions";
+import { goto } from '$app/navigation';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCALLWsYW2R0tS_sJ-b3cJLIl8b8NRRECs",
@@ -26,16 +27,18 @@ export const storage = getStorage();
 export async function signInWithGoogle() {
     const provider = new GoogleAuthProvider();
     const user = await signInWithPopup(auth, provider);
-    console.log(user)
+    goto('/');
 }
 
 export async function logout() {
     try {
-        await signOut(auth)
-        console.log('User logged out')
+      await signOut(auth)
     }
     catch (error: any) {
-        console.error('Error logging out', error)
+      console.error('Error logging out', error)
+    }
+    finally {
+      goto('/')
     }
 }
 
